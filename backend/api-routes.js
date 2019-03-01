@@ -1,7 +1,10 @@
 /**
  * Initialize express router
+ * Import collection controller
  */
 const router = require('express').Router();
+const collectionController = require('./collectionController');
+
 
 /**
  * Set a default API response.
@@ -9,18 +12,20 @@ const router = require('express').Router();
 router.get('/', 
   (req, res) => {
     res.json({
-       status: 'API Its Working',
-       message: 'Welcome to RESTHub crafted with love!'
+        status: 'API Its Working',
+        message: 'Welcome to RESTHub crafted with love!'
       });
 });
 
+router.route('/providers')
+.get(collectionController.index)
 
-// Import collection controller
-var collectionController = require('./collectionController');
-// collection routes
-router.route('/collections')
-    .get(collectionController.index)
-/*     .post(collectionController.new);
+router.route('/providers/:provider_id')    
+.get(collectionController.view)
+/*
+router.route('/providers')
+    .get(collectionController.index)  
+   .post(collectionController.new);
 router.route('/collections/:collection_id')
     .get(collectionController.view)
     .patch(collectionController.update)
