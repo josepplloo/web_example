@@ -33,9 +33,12 @@ app.use(bodyParser.json());
 /**
  *  Connect to Mongoose and set connection variable 
 */
-mongoose.connect('mongodb://localhost/resthub');
-var db = mongoose.connection;
-
+const myenv = process.env;
+const mongoDBURI = `mongodb://${myenv.DB_USER}:${myenv.DB_PASS}@${myenv.DB_URI}`
+console.log(mongoDBURI);
+mongoose.connect(mongoDBURI,{ useNewUrlParser: true });
+const dbConnection = mongoose.connection;
+dbConnection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
 

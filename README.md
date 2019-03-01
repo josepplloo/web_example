@@ -1,7 +1,7 @@
 web_example
 ============
 
-  >A backend and frontend exersices.
+  >Backend and frontend exersices.
 
   # Backend
 
