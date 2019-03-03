@@ -28,7 +28,6 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "mongoose": "^5.4.16",
-    "pako": "^1.0.10",
     "promise": "^8.0.2"
   },
   "devDependencies": {}

@@ -13,13 +13,10 @@ require('dotenv').config();
 
 /**
  * Init the App
- * Use Api routes in the App add the URL /api
  * Setup the port
  * Configure bodyparser to handle post requests
  */
 const app = express();
-
-app.use('/api', apiRoutes)
 
 const port = process.env.PORT || 8080;
 
@@ -27,9 +24,8 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
-/**
- *  Connect to Mongoose and set connection variable 
-*/
+
+
 const myenv = process.env;
 const mongoDBURI = `mongodb://${myenv.DB_USER}:${myenv.DB_PASS}@${myenv.DB_URI}`
 mongoose.connect(mongoDBURI,{ useNewUrlParser: true });
@@ -38,8 +34,10 @@ dbConnection.on('error', console.error.bind(console, 'MongoDB connection error:'
 
 /**
  * Send message for default URL /
+  Use Api routes in the App add the URL /api
  */
 app.get('/', (req, res) => res.send('Hello World with Express'));
+app.use('/api', apiRoutes)
 /**
  * Start the app given that port
  */

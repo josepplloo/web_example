@@ -1,15 +1,14 @@
 const axios = require('axios');
-const pako = require('pako');
 
 require('promise/polyfill-done');
 
 const urlAPI = 'http://localhost:8080/api/providers'
 
 
-/**
+/*
  * Get All data from the API
  */
-/* axios.get(urlAPI)
+axios.get(urlAPI)
 .then((response) => {
   console.log('Test 1... All data recived');
   return response;
@@ -17,12 +16,12 @@ const urlAPI = 'http://localhost:8080/api/providers'
 .catch(function (error) {
   console.log("Test 1: Maybe the server is not running ...",error);
 })
-.done(); */
+.done();
 
 /**
  * get one from API
  */
-/* axios.get(urlAPI+'/59c91a1f56fd344c4d82b671')
+axios.get(urlAPI+'/59c91a1f56fd344c4d82b671')
 .then((response) => {
   console.log('Test 2... One data recived');
   return response;
@@ -30,35 +29,22 @@ const urlAPI = 'http://localhost:8080/api/providers'
 .catch(function (error) {
   console.log("Test 2: Maybe the server is not running ...",error);
 })
-.done(); */
+.done(); 
 
 /**
  * Create one document
  */
 const providerTest = {
-  "firstName": 'Dolores',
-  "lastName" : 'Abernathy',
-  "middleName" : 'Wyatt',
-  "email" : 'deathbringer@westworld.tv',
-  "employerId": '999'
+  firstName: 'Dolores',
+  lastName : 'Abernathy',
+  middleName : 'Wyatt',
+  email : 'deathbringer@westworld.tv',
+  employerId: '999'
 };
 
-const document = pako.
-deflate(JSON.stringify(providerTest), { to: 'string' });
-
-axios({method: 'post',
-  url: urlAPI,
-  data:{
-    firstName: 'Dolores',
-    lastName: 'Abernathy',
-    middleName: 'Wyatt',
-    email: 'deathbringer@westworld.tv',
-    employerId: '999'
-  }})
+axios.post(urlAPI,providerTest)
   .then((response) => {
-    response.document = JSON.
-    parse(pako.inflate(response.document, { to: 'string' }));
-    console.log('Test 3 ... Creating data',response.document);
+    console.log('Test 3 ... Creating data ',response.data);
     return response;
   }).catch(function (error) {
     console.log("Test 3: Maybe the server is not running ...",error);
@@ -91,21 +77,19 @@ axios({method: 'post',
      updatedBy: 55115,
      updatedAt: '2017-09-24T16:00:35.298Z' } }
  */
-/* axios
-  .put(urlAPI+'/59c91a1f56fd344c4d82b671', document)
+axios
+  .put(urlAPI+'/5c7bf718574bd904e7f59a74', providerTest)
   .then((response) => {
-    response.document = JSON.
-    parse(pako.inflate(response.document, { to: 'string' }));
-    console.log('Test 4 Updating data...',response.document);
+    console.log('Test 4 Updating data...',response.data);
     return response;
   }).catch(function (error) {
     console.log("Test 4: Maybe the server is not running ...",error);
   })
-  .done(); */
+  .done();
 /**
  * Delete same document
  *  */  
-/* axios.delete
+axios.delete
 (urlAPI+'/59c91a1f56fd344c4d82b671')
 .then((response) => {
   console.log('Test 5 erasing data...');
@@ -114,4 +98,4 @@ axios({method: 'post',
 .catch(function (error) {
   console.log("Test 5: Maybe the server is not running ...",error);
 })
-.done(); */
+.done(); 

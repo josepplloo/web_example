@@ -30,7 +30,6 @@ exports.view = function (req, res) {
 };
 
 exports.new = function (req, res) {
-  console.log('este es el body',req.body);
   provider.firstName = req.body.firstName;
   provider.lastName = req.body.lastName;
   provider.middleName = req.body.middleName;
@@ -67,14 +66,14 @@ exports.update = function (req, res) {
 };
 
 exports.delete = function (req, res) {
-  Collection.remove({
+  Collection.deleteOne({
     _id: req.params.provider_id
   },function (err, provider) {
       if (err)
         res.send(err);
       res.json({
           status: 'success',
-          message: `${provider} deleted`
+          message: `provider ${req.params.provider_id} deleted`
       });  
   });
 }
