@@ -1,4 +1,5 @@
 const Collection = require('./collectionModel');
+const provider = new Collection();
 
 exports.index = function (req, res) {
   Collection.get(function (err, collection) {
@@ -29,8 +30,8 @@ exports.view = function (req, res) {
 };
 
 exports.new = function (req, res) {
-  const provider = new Collection();
-  provider.firstName = req.body.firstName ? req.body.firstName : provider.firstName;
+  console.log('este es el body',req.body);
+  provider.firstName = req.body.firstName;
   provider.lastName = req.body.lastName;
   provider.middleName = req.body.middleName;
   provider.email = req.body.email;
@@ -49,7 +50,7 @@ exports.update = function (req, res) {
   Collection.findById(req.params.provider_id, function (err, provider) {
     if (err)
       res.send(err);
-    provider.firstName = req.body.firstName ? req.body.firstName : provider.firstName;
+    provider.firstName = req.body.firstName;
     provider.lastName = req.body.lastName;
     provider.middleName = req.body.middleName;
     provider.email = req.body.email;

@@ -19,17 +19,10 @@ router.get('/',
 
 router.route('/providers')
 .get(collectionController.index)
-
+.post(collectionController.new);
 router.route('/providers/:provider_id')    
 .get(collectionController.view)
-/*
-router.route('/providers')
-    .get(collectionController.index)  
-   .post(collectionController.new);
-router.route('/collections/:collection_id')
-    .get(collectionController.view)
-    .patch(collectionController.update)
-    .put(collectionController.update)
-    .delete(collectionController.delete); */
-// Export API routes
+.put(collectionController.update)
+.delete(collectionController.delete);
+
 module.exports = router;
