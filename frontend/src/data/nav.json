@@ -75,8 +75,47 @@
           "label":"Live"
         }
       ]
+    },
+    {
+      "label":"Delivery Type",
+      "items":[
+        {
+          "label":"Any delivery type"
+        },
+        {
+          "label":"Coputer-Based Training"
+        },
+        {
+          "label":"Correspondence"
+        },
+        {
+          "label":"Mailed Material"
+        }
+      ]
+    },
+    {
+      "label":"Subject Area",
+      "items":[
+        {
+          "label":"Any Subject Area"
+        },
+        {
+          "label":"HIV/AIDS"
+        },
+        {
+          "label":"End-of-Life Care and Palliative Health Care"
+        },
+        {
+          "label":"Domestic Violence"
+        }
+      ]
     }
-  ]}
+  ],
+  "results":{
+    
+  }
+}
+  
 
   
 
