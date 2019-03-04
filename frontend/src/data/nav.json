@@ -61,7 +61,24 @@
   "tabs": {
     "courses":"COURSES",
     "providers":"PROVIDERS"
-  }
+  },
+  "filters": {
+    "label":"filter course result",
+    "items":[
+    {
+      "label":"Course Type",
+      "items":[
+        {
+          "label":"Selft paced"
+        },
+        {
+          "label":"Live"
+        }
+      ]
+    }
+  ]}
+
+  
 
     
 }
