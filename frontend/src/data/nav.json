@@ -1,0 +1,53 @@
+{
+   "logo": {
+      "img": "assets/logo.png",
+      "link": "#"
+    },
+   "links":[
+      {
+         "label":"Features",
+         "url":"#",
+         "items":[
+
+         ]
+      },
+      {
+         "label":"Plans",
+         "url":"#",
+         "items":[
+           
+         ]
+      },
+      {
+         "label":"Organizations",
+         "url":"#",
+         "items":[
+            
+         ]
+      },
+      {
+         "label":"Browse courses",
+         "url":"#/ideas",
+         "items":[
+           
+         ]
+      },
+      {
+         "label":"Support",
+         "url":"#/news",
+         "items":[
+
+         ]
+      }         
+   ],
+   "login":[
+    {
+       "label":"Sing In",
+       "url":"#"
+    },
+    {
+       "label":"7 day trial",
+       "url":"#"
+    }
+  ]
+}

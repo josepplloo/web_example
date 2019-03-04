@@ -12,7 +12,7 @@ Backend
 
   The companion tutorial on building can be found here [<b>How To Build Simple RESTful API With NodeJs, ExpressJs And MongoDb</b>](https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d).
 
-  ## Tecnologies Used
+  # Tecnologies Used
 
   **Mongoose** is Nodejs package for modeling Mongodb. It helps you handle validation and business logic for mongodb on Nodejs. You can learn more here.
 
@@ -20,7 +20,7 @@ Backend
 
   **axios** Promise based HTTP client for the browser and node.js
 
-  ## Project Setup
+  # Project Set Up
   It application runs over `npm 5.6.0` and `node v8.9.3`.
 
   First of all please install the follow dependencies, also you should
@@ -39,5 +39,3 @@ Backend
   `npm test` the tests are in one file, feel free to explore
   and add the info that does you need. *All Test are functionals,* 
   *Delete test fails if the data had has erased before.* 
-
-

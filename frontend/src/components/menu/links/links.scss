@@ -1,0 +1,29 @@
+.nav-bar {
+  display: flex;
+}
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+}
+
+.menu li {
+  list-style-type: none; /* remove bullets */
+}
+
+.menu li::before {
+  content: "\200B"; /* add zero-width space */
+}
+
+.menu li ul{
+  display: flex;
+  position: absolute;
+}  
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+}
