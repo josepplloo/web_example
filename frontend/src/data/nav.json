@@ -49,5 +49,19 @@
        "label":"7 day trial",
        "url":"#"
     }
-  ]
+  ],
+  "label": {
+      "label":"Find CE for A",
+      "region":"Florida",
+      "doctor":"Medical Doctor"
+  },
+  "search": {
+    "searchplaceholder":"Search course and providers"
+  },
+  "tabs": {
+    "courses":"COURSES",
+    "providers":"PROVIDERS"
+  }
+
+    
 }
