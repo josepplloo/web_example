@@ -2,7 +2,6 @@
 
 @import 'components/menu/menu.scss';
 
-button {
-  background-color: transparent;
-  border: 0;
-}
+@import 'components/searchbar/searchbar.scss'
+
+

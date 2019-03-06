@@ -1,3 +1,28 @@
-.nav {
-  border: 1px solid black ;
+.Search {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Open Sans, sans-serif;
+  font-size: 13px;
+  background-color: #375892;
+
+  &__label-region {
+    font: inherit;
+    color: white;
+  }
+
+  &__select {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 2px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 1px;
+    height: 32px;
+    margin-right: 5px;
+    width: 70px;
+    color: white;
+
+  }
 }
