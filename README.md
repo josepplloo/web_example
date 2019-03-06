@@ -1,14 +1,11 @@
 web_example
 ============
 
-  >Backend and frontend exersices.
+  Usefull Backend and Frontend examples.
 
-  # Backend
-
-  ## Project Setup
-
+  # Backend 
+  see documentation [here](backend/README.md)
 
   # Frontend
-
-  ## Project Setup
+    ... under construction.
 

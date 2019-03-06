@@ -1,7 +1,7 @@
 Backend
 =========
 
-  An app demonstrating simple API implementation with NodeJs, Express and MongoDb
+  An app demonstrating simple API implementation with NodeJs, Express and MongoDB.
 
   The `api` uri preceeds all API endpoints(e.g. `http://localhost:8080/api/providers`) and the following endpoints are currently available:
   * GET `/api/providers`
@@ -11,8 +11,26 @@ Backend
   * DELETE `/api/providers/:id`
 
   The companion tutorial on building can be found here [<b>How To Build Simple RESTful API With NodeJs, ExpressJs And MongoDb</b>](https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d).
+    
+***
+**Warning:** Watch out by this tutorial:
+  * 🐛 It not have a proper error hander.
+  * 🐞 It not have a good code format stile.
+  * 🐌 It use Callbacks instead Promises
 
+But had a nice file structure.
+***
+
+  In order to write a beter code I recomend the follow lectures about API construction and ES 6 promise:
+  
+  * [Converting a callback to a promise.](https://www.xul.fr/javascript/callback-to-promise.php)
+
+  * [Creating a REST API with Express.js and MongoDB](https://www.robinwieruch.de/mongodb-express-node-rest-api/)
+
+  * [How to prevent callback hell and forest fire](http://callbackhell.com/) 
   # Tecnologies Used
+
+
 
   **Mongoose** is Nodejs package for modeling Mongodb. It helps you handle validation and business logic for mongodb on Nodejs. You can learn more here.
 
@@ -21,6 +39,7 @@ Backend
   **axios** Promise based HTTP client for the browser and node.js
 
   # Project Set Up
+
   It application runs over `npm 5.6.0` and `node v8.9.3`.
 
   First of all please install the follow dependencies, also you should
@@ -36,6 +55,6 @@ Backend
     }
 
   Next you can run the app with `npm start` script and test with
-  `npm test` the tests are in one file, feel free to explore
+  `npm test`, the tests are in one file, feel free to explore
   and add the info that does you need. *All Test are functionals,* 
   *Delete test fails if the data had has erased before.* 

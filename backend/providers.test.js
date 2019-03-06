@@ -14,7 +14,7 @@ axios.get(urlAPI)
   return response;
 })
 .catch(function (error) {
-  console.log("Test 1: Maybe the server is not running ...",error);
+  console.error("Test 1: Maybe the server is not running ...",error.message);
 })
 .done();
 
@@ -27,7 +27,7 @@ axios.get(urlAPI+'/59c91a1f56fd344c4d82b671')
   return response;
 })
 .catch(function (error) {
-  console.log("Test 2: Maybe the server is not running ...",error);
+  console.error("Test 2: Maybe the server is not running ...",error.message);
 })
 .done(); 
 
@@ -47,7 +47,7 @@ axios.post(urlAPI,providerTest)
     console.log('Test 3 ... Creating data ',response.data);
     return response;
   }).catch(function (error) {
-    console.log("Test 3: Maybe the server is not running ...",error);
+    console.error("Test 3: Maybe the server is not running ...",error.message);
   })
   .done();
 
@@ -83,7 +83,7 @@ axios
     console.log('Test 4 Updating data...',response.data);
     return response;
   }).catch(function (error) {
-    console.log("Test 4: Maybe the server is not running ...",error);
+    console.error("Test 4: Maybe the server is not running ...",error.message);
   })
   .done();
 /**
@@ -96,6 +96,6 @@ axios.delete
   return response;
 })
 .catch(function (error) {
-  console.log("Test 5: Maybe the server is not running ...",error);
+  console.error("Test 5: Maybe the server is not running ...",error.message);
 })
 .done(); 

@@ -1,59 +1,31 @@
 const Collection = require('./collectionModel');
 const provider = new Collection();
 
+
 exports.index = getAll;
-
 async function getAll(req, res) {
-  const collection = await Collection.find();
+  const collection = await Collection.find()
+    .catch((err) => {
+      console.error(err)
+      return {
+        status: "error",
+      };
+    });
   return res.json(collection);
+}
 
-}
-/* 
-function getAll(req, res) {  
-  Collection.get(function (err, collection) {
-    if (err) {
-      throw res.json({
-        status: "error",
-        message: err,
-      });
-    }
-    return res.json({
-      status: "success",
-      message: "data retrieved successfully",
-      count: collection.length,
-      data: collection
-    });
-  });
-}
- */
 exports.view = getOne;
-async function getOne(req, res) {
-  try {
-    const collection = await Collection.findById(req.params.provider_id);
-    return res.json(collection);
-  } catch (Error) {
-    //Error(err)
-    throw res.json({
-      status: "error",
-      message: res,
-    });
-  }
-}
-/* function getOne (req, res) {
-   Collection.findById(req.params.provider_id, function (err, provider) {
-    if(err) {
-      throw res.json({
+async function getOne(req, res) {  
+  const collection = await Collection.findById(req.params.provider_id)
+    .catch((err) => {
+      console.error(err)
+      return {
         status: "error",
-        message: err,
-      });
-    }
-    return res.json({
-      message: 'Provider details loading..',
-      data: provider
+      };
     });
-  });
+  return res.json(collection);
 }
- */
+
 exports.new = createProvider;
 function createProvider(req, res) {
   provider.firstName = req.body.firstName;
@@ -79,17 +51,12 @@ function createProvider(req, res) {
 exports.update = updateProvider;
 function updateProvider(req, res) {
   Collection.findById(req.params.provider_id, function (err, provider) {
-    if(err) {
-      throw res.json({
+    if(err || provider === null) {
+      console.error('Error with update Provider')
+      return res.json({
         status: "error",
-        message: err,
       });
     }
-    provider.firstName = req.body.firstName;
-    provider.lastName = req.body.lastName;
-    provider.middleName = req.body.middleName;
-    provider.email = req.body.email;  
-    
     provider.save(function (err) {
       if(err) {
         throw res.json({
@@ -97,9 +64,14 @@ function updateProvider(req, res) {
           message: err,
         });
       }
+      provider.firstName = req.body.firstName;
+      provider.lastName = req.body.lastName;
+      provider.middleName = req.body.middleName;
+      provider.email = req.body.email;  
+    
       return res.json({
-          message: 'provider Info updated',
-          data: provider
+        message: 'provider Info updated',
+        data: provider
       });
     });
   });

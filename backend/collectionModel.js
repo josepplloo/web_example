@@ -10,7 +10,7 @@ const collectionSchema = mongoose.Schema({
 
 const Collection = module.exports = mongoose.model('providers', collectionSchema);
 
-module.exports.get = getFunction;
+/* module.exports.get = getFunction;
 async function getFunction(method) {
   return await Collection.find(method);
-}
+} */
