@@ -1,25 +1,15 @@
 Backend
 =========
+   
+  This app demonstrates a simple API implementation with NodeJs, Express and MongoDB.
 
-  An app demonstrating simple API implementation with NodeJs, Express and MongoDB.
-
-  The `api` uri preceeds all API endpoints(e.g. `http://localhost:8080/api/providers`) and the following endpoints are currently available:
-  * GET `/api/providers`
-  * POST `/api/providers`
-  * GET `/api/providers/:id`
-  * PUT `/api/providers/:id`
-  * DELETE `/api/providers/:id`
-
-  The companion tutorial on building can be found here [<b>How To Build Simple RESTful API With NodeJs, ExpressJs And MongoDb</b>](https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d).
+  This example was made based on this tutorial [<b>How To Build Simple RESTful API With NodeJs, ExpressJs And MongoDb</b>](https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d).
     
-***
-**Warning:** Watch out by this tutorial:
-  * 🐛 It not have a proper error hander.
-  * 🐞 It not have a good code format stile.
-  * 🐌 It use Callbacks instead Promises
-
-But had a nice file structure.
-***
+**⚠️ Warning ⚠️** Be careful with this tutorial:
+  * 🐛 It does not have a proper error handler.
+  * 🐞 It does not have a good code format style.
+  * 🐌 It uses Callbacks instead of Promises.
+  * ✅ But it has a nice file structure.
 
   In order to write a beter code I recomend the follow lectures about API construction and ES 6 promise:
   
@@ -28,33 +18,29 @@ But had a nice file structure.
   * [Creating a REST API with Express.js and MongoDB](https://www.robinwieruch.de/mongodb-express-node-rest-api/)
 
   * [How to prevent callback hell and forest fire](http://callbackhell.com/) 
-  # Tecnologies Used
+  
+  # Tecnologies. 
 
+  **Mongoose** is a Nodejs package for modeling Mongodb. It helps you handle validation and business logic for mongodb on Nodejs.
 
+  **Body-parser** enables your app to parse data from incoming request like form data via `urlencode`.
 
-  **Mongoose** is Nodejs package for modeling Mongodb. It helps you handle validation and business logic for mongodb on Nodejs. You can learn more here.
-
-  **Body-parser** enables your app to parse data from incoming request like form data via urlencode. We need to import this to our app and use them.
-
-  **axios** Promise based HTTP client for the browser and node.js
+  **Axios** is a Promise based HTTP client for the browser and node.js
 
   # Project Set Up
 
-  It application runs over `npm 5.6.0` and `node v8.9.3`.
+  The application runs in `npm 6.8.0` and `node v8.9.3`.
 
-  First of all please install the follow dependencies, also you should
-  check the `package.json` file.
+  Install node dependencies executing `npm install`.
 
-    "dependencies": {
-      "axios": "^0.18.0",
-      "body-parser": "^1.18.3",
-      "dotenv": "^6.2.0",
-      "express": "^4.16.4",
-      "mongoose": "^5.4.16",
-      "promise": "^8.0.2"
-    }
+  You can run the app locally running `npm start`.
 
-  Next you can run the app with `npm start` script and test with
-  `npm test`, the tests are in one file, feel free to explore
-  and add the info that does you need. *All Test are functionals,* 
-  *Delete test fails if the data had has erased before.* 
+# Endpoints.
+
+The `api` URI preceeds all API endpoints(e.g. `http://localhost:8080/api/providers`) and the following endpoints are currently available:
+  * GET `/api/providers`
+  * POST `/api/providers`
+  * GET `/api/providers/:id`
+  * PUT `/api/providers/:id`
+  * DELETE `/api/providers/:id`
+

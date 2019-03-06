@@ -1,11 +1,12 @@
 web_example
 ============
 
-  Usefull Backend and Frontend examples.
+  Useful Backend and Frontend examples.
 
   # Backend 
-  see documentation [here](backend/README.md)
+  See documentation [here](backend/README.md)
 
   # Frontend
     ... under construction.
+
 
