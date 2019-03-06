@@ -11,15 +11,15 @@ Backend
   * 🐌 It uses Callbacks instead of Promises.
   * ✅ But it has a nice file structure.
 
-  In order to write a beter code I recomend the follow lectures about API construction and ES 6 promise:
+  In order to write better code, I recomend the following lectures about API construction and ES6 promises:
   
   * [Converting a callback to a promise.](https://www.xul.fr/javascript/callback-to-promise.php)
 
-  * [Creating a REST API with Express.js and MongoDB](https://www.robinwieruch.de/mongodb-express-node-rest-api/)
+  * [Creating a REST API with Express.js and MongoDB.](https://www.robinwieruch.de/mongodb-express-node-rest-api/)
 
-  * [How to prevent callback hell and forest fire](http://callbackhell.com/) 
+  * [How to prevent callback hell and forest fire.](http://callbackhell.com/) 
   
-  # Tecnologies. 
+  ## Tecnologies. 
 
   **Mongoose** is a Nodejs package for modeling Mongodb. It helps you handle validation and business logic for mongodb on Nodejs.
 
@@ -27,7 +27,7 @@ Backend
 
   **Axios** is a Promise based HTTP client for the browser and node.js
 
-  # Project Set Up
+  ## Project Set Up.
 
   The application runs in `npm 6.8.0` and `node v8.9.3`.
 
@@ -35,7 +35,7 @@ Backend
 
   You can run the app locally running `npm start`.
 
-# Endpoints.
+## Endpoints.
 
 The `api` URI preceeds all API endpoints(e.g. `http://localhost:8080/api/providers`) and the following endpoints are currently available:
   * GET `/api/providers`
