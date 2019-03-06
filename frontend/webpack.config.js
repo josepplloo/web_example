@@ -12,12 +12,6 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.pug$/,
-      use: {
-        loader: 'pug-loader'
-      }
-    },
-    {
       test: /\.scss$/,
       use: [
           "style-loader", // creates style nodes from JS strings

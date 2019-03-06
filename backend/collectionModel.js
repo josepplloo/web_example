@@ -8,9 +8,9 @@ const collectionSchema = mongoose.Schema({
   employerId: Number,
 });
 
-const Collection = module.exports = mongoose.
-model('providers', collectionSchema);
+const Collection = module.exports = mongoose.model('providers', collectionSchema);
 
-module.exports.get = function (callback, limit) {
-  Collection.find(callback).limit(limit);
+module.exports.get = getFunction;
+async function getFunction(method) {
+  return await Collection.find(method);
 }
