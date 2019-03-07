@@ -1,28 +1,98 @@
 .Search {
   align-items: center;
+  background-color: #375892;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   font-family: Open Sans, sans-serif;
   font-size: 13px;
-  background-color: #375892;
+  justify-content: space-between;
+  height: 150px;
 
-  &__label-region {
-    font: inherit;
-    color: white;
+  &__labels-container {
+    align-items: center;
+    display: flex;
+    margin-top: 22px;
   }
 
-  &__select {
+  &__label-region {
+    color: white;
+    font: inherit;
+    font-size: 16px;
+  }
+
+  &__select-region {
     background-color: transparent;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 2px;
+    color: white;
+    cursor: pointer;
     font: inherit;
     font-size: 16px;
     font-weight: 1px;
-    height: 32px;
-    margin-right: 5px;
-    width: 70px;
+    height: 35px;
+    margin-left: 5px;
+    padding: 3px;
+    width: 80px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &__select-doctor {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 2px;
     color: white;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 1px;
+    height: 35px;
+    cursor: pointer;
+    padding: 3px;
+    width: 138px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
   }
+
+  &__arrow {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid white;
+    bottom: 1px;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    position: relative;
+    right: 14px;
+  }
+
+  &__input {
+    background-color: white;
+    border-radius: 2px;
+    border: 0;
+    width: 408px;
+    height: 31px;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 0;
+    color: gainsboro;
+    cursor: pointer;
+    font: inherit;
+    font-size: 9px;
+    font-weight: 1px;
+    height: 37px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: white;
+      border-bottom: 2px solid #19c27f;
+    }
+  }
+
 }
