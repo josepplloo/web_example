@@ -1,21 +1,27 @@
-import template from './searchbar.pug'
-import './searchbar.scss'
-import Label from './label/label'
-import Search from './search/search'
-import Tabs from './tabs/tabs'
+import TextRetriever from './TextRetriever';
+import DropDown from './DropDown';
 
-export default function Searchbar(node) {
-  const parser = new DOMParser();
-  const parsedDOM = parser.
-    parseFromString(template(), "text/html").
-    body.children[0];
-  node.appendChild(parsedDOM);
+export default class SearchBar {
+  constructor (selector, retrieveData) {
+    this.node = document.querySelector(selector)
+    this.retrieveData = retrieveData
+    this.buildTextRetriever()
+  }
 
-  const searchbarElement = node.querySelector('.nav');
-  const label =  Label(searchbarElement);
-  const search =  Search(searchbarElement);
-  const tabs = Tabs(searchbarElement);
+  buildTextRetriever() {
+    this.textRetriever = new TextRetriever(this.node,
+      this.retrieveData,
+      this.buildDropDown.bind(this)
+    )
+  }
 
-  
-  
+  buildDropDown(response) {
+    this.dropDown = new DropDown(this.node, response, this.printSelectedText.bind(this))
+  }
+
+  printSelectedText (text) {
+    this.textRetriever.printSelectedData(text)
+  }
+
 }
+

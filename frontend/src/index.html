@@ -44,12 +44,81 @@
       </div>
       <div class="Search__input-container">
         <input class="Search__input" type="search" placeholder="Search course and providers">
+        <ul class="Search__results-container"></ul>
       </div>
       <div class="Search__tabs">
         <button class="Search__button" type="button">COURSES</button>
         <button class="Search__button" type="button">PROVIDERS</button>
       </div>
     </nav>
+    <main class="Filters">
+      <aside class="Filters__container">
+        <header class="Filters__header-container">
+          <h1 class="Filters__title">FILTER COURSE RESULT</h1>
+        </header>
+        <section class="Filters__subfilter">
+          <h3 class="Filter__subtitle">Course type</h3>
+          <div class="Filters-item-container">
+            <input type="radio" name="self" id="self">
+            <label for="self">Self paced</label>
+          </div>
+          <div class="Filters-item-container">
+              <input type="radio" name="live" id="live">
+              <label for="live">Live</label>
+          </div>
+        </section>
+        <section class="Filters__subfilter">
+            <h3 class="Filter__subtitle">Delivery type</h3>
+            <div class="Filters-item-container">
+              <input type="radio" name="any" id="any">
+              <label for="any">Any delivery type</label>
+            </div>
+            <div class="Filters-item-container">
+                <input type="radio" name="computer" id="computer">
+                <label for="computer">Computer-Based Training</label>
+            </div>
+            <div class="Filters-item-container">
+                <input type="radio" name="corresponcence" id="corresponcence">
+                <label for="corresponcence">Corresponcence</label>
+            </div>
+            <div class="Filters-item-container">
+                <input type="radio" name="mailed" id="mailed">
+                <label for="mailed">Mailed Material</label>
+            </div>
+            <h5 class="Filter__view-more">View more</h5>
+          </section>
+          <section class="Filters__subfilter">
+              <h3 class="Filter__subtitle">Subject Area</h3>
+              <div class="Filters-item-container">
+                <input type="radio" name="any-s" id="any-s">
+                <label for="any-s">Any subject area</label>
+              </div>
+              <div class="Filters-item-container">
+                  <input type="radio" name="aih" id="aih">
+                  <label for="aih">AIH/AIDS</label>
+              </div>
+              <div class="Filters-item-container">
+                  <input type="radio" name="end" id="end">
+                  <label for="end">End-of-Life Care and Palliative Health Care</label>
+              </div>
+              <div class="Filters-item-container">
+                  <input type="radio" name="domestic" id="domestic">
+                  <label for="domestic">Domestic Violence</label>
+              </div>
+              <h5 class="Filter__view-more">View more</h5>
+            </section>
+      </aside>
+      <section class="Filters__results-container">
+        <article class="Filters__title-container">
+          <h3>Page 1 of 1231 results</h3>
+          <label class="Filters__label-sorted" for="relevance">Sorted by</label>
+        <select class="Filters__select-region" id="relevance" name="relevance">
+          <option value="Florida" selected="selected">Relevance</option>
+        </select>
+        <span class="Filters__arrow"></span>
+        </article>
+      </section>
+    </main>
   </div>
 </body>
 </html>
