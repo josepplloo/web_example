@@ -4,56 +4,52 @@ import Helpers from '../helpers';
 export default class Filters {
   constructor (retrieveData) {
     this.retrieveData = retrieveData;
-    this.endpoint = Helpers.endpoint3Courses;
-    this.endpointAllCourses = Helpers.endpointAllCourses;
-    this.pages = Helpers.pages;
-    this.buildCoursesRetriever()
+    ({ allCourses: this.allCourses,
+       preview: this.preview,
+       pages:this.pages } = Helpers);
+
+    this.buildCourses();
   }
 
-  buildCoursesRetriever() {
-    this.retrieveData(this.endpoint, this.mountCards);
-    this.retrieveData(this.endpointAllCourses, this.mountAllCards);
+  buildCourses() {
+    this.retrieveData(this.preview, this.mountCards);
+    this.retrieveData(this.allCourses, this.mountAllCards);
     this.bindEvents()
   }
 
-  mountCards (text) {
-    let dropDownTemplate = {};
-    const node = document.querySelector('.Filters__main-curses');
-    const textToDisplay = text.map(({coursePublication}) => coursePublication.course)
+  mountCards(data) {
+    const mainCourses = document.querySelector('.Filters__main-courses');
+    const coursesList = data.map(({ coursePublication }) => coursePublication.course);
 
-    dropDownTemplate = textToDisplay.map((course)=>{
+    const dropDownTemplate = coursesList.map(({ featuredBanner, name }) => {
       return (`
-        <li class="Filters__main-curse">
+        <li class="Filters__main-course">
           <article class="Filters__article">
             <div>
               <img alt="Featured course banner" class="Filters__image-course"
-              src="https://storage.cebroker.com/CEBroker/${course.featuredBanner}"
-              >
+              src="https://storage.cebroker.com/CEBroker/${featuredBanner}">
             </div>
             <div>
-              <h1>${course.name}</h1>
+              <h1>${name}</h1>
               <h2></h2>
             </div>
           </article>
         </li>
       `)
     }).join('');
-    node.innerHTML = dropDownTemplate;
+    mainCourses.innerHTML = dropDownTemplate;
   }
 
-  mountAllCards (text) {
-    let dropDownTemplate = {};
-    const node = document.querySelector('.Filters__others-curses');
-
-    const textToDisplay = text.items.map(({course}) => course);
-
-    dropDownTemplate = textToDisplay.map((item)=>{
+  mountAllCards (data) {
+    const otherCourses = document.querySelector('.Filters__other-courses');
+    const coursesList = data.items.map(({ course }) => course);
+    const dropDownTemplate = coursesList.map(({ name, provider })=>{
       return (`
       <li class="Filters__main-curse">
       <article class="Filters__article">
         <div>
-          <h1>${course.name}</h1>
-          <h2>${course.provider.name}</h2>
+          <h1>${name}</h1>
+          <h2>${provider.name}</h2>
         </div>
       </article>
     </li>
@@ -65,7 +61,7 @@ export default class Filters {
           .body;
     const mypage = document.createElement('DIV')
     mypage.innerHTML = parsedDOM.innerHTML;
-    node.appendChild(mypage);
+    otherCourses.appendChild(mypage);
 
   }
 
@@ -76,8 +72,8 @@ export default class Filters {
       let clientHeight = document.documentElement.clientHeight;
       if (offsetHeight <= scrollTop + clientHeight) {
 
-        this.endpointAllCourses=this.pages();
-        this.retrieveData(this.endpointAllCourses, this.mountAllCards);
+        this.allCourses = this.pages();
+        this.retrieveData(this.allCourses, this.mountAllCards);
       }
     })
   }

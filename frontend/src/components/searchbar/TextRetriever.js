@@ -6,7 +6,7 @@ export default class TextRetriever {
     this.input.placeholder = 'Search course and providers';
     this.retrieveData = retrieveData;
     this.printData = printData;
-    this.endpoint = Helpers.endpoint;
+    this.search = Helpers.search;
     this.timeoutID;
     this.bindEvents();
   }
@@ -18,7 +18,7 @@ export default class TextRetriever {
       const isNotEmpty = inputValue.trim() !== ''
 
       if(hasTheLength && isNotEmpty){
-        let url = this.endpoint.concat(inputValue)
+        let url = this.search.concat(inputValue)
         this.debounce(50, () => {
           this.retrieveData(url, (response) => this.printData(response.items))
         })
