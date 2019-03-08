@@ -1,5 +1,10 @@
 export default class DropDown {
-  constructor (node, text, returnSelectedText) {
+  /**
+   * Build the result panel
+   * @param {Node} node
+   * @param {Object} text
+   * @param {String} returnSelectedText
+   */constructor (node, text, returnSelectedText) {
     this.node = node.querySelector('.Search__results-container');
     this.returnSelectedText = returnSelectedText;
     this.dropDownTemplate = {};

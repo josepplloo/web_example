@@ -2,112 +2,64 @@ fronted-exercise
 ================
   _Multi Page Application Exercise_
 
-  > This exercise was taken from [andrscrrn](https://github.com/andrscrrn/hb-multipage-site)
+This MVP of a Multipage Application was developed to:
+  * Help you to have a better understanding of the correct structure of a web project.
 
-This exercise will help you to have a better understanding of the correct structure of a web project.
+  * Create reusable components. In this Application you can find a searchbar and content created dinamically.
 
-# Tecnologies Used
+## Technologies Used
 
-In this exercise you should separate the user interface from any kind of business logic. For this you can use separate *modules* that are connected using dependencies (`import` and `export`).
+This project was build using **Webpack** to bundle.
 
-**pug**
-**scss**
-**JS**
+In this exercise you will find separate files for user interface and any kind of business logic. You will work with **Scss** with *BEM*, **JS**, and **HTML**.
 
+You will find BEM structure in **Sass** files.
 
-# Project Set Up
-It project was developed in `node v8.9.3` & `npm 5.6.0`. First of all please install the follow dependencies, also you should check the `package.json` file.
+## Project Set Up
+The application runs in `npm 6.8.0` and `node v8.9.3`.
+
+  Install node dependencies executing `npm install`.
+
+  You can run the app locally running `npm start`. It will be served at `http://localhost:8080`.
 
 ## Folder Structure
 
-The code is inside each component.
+The code is inside of each component following the structure below:
 
 ```
 frontend
-└── src
-    ├── assets
-    ├── data
-    └── components
-        ├── menu ...
-        ├── filters ...
-        └── searchbar ...
-            
+├── package.json
+├── README.md
+└── src /
+    ├── index.html
+    ├── index.js
+    ├── main.scss
+    ├── assets/
+    └── components/
+        ├── helpers.js
+        ├── menu/
+        |    ├── menu.js
+        |    └──  menu.scss
+        ├── filters/
+        |    ├── filters.js
+        |    └── filters.scss
+        └── searchbar/
+            ├── DataRetriever.js
+            ├── DropDown.js
+            ├── TextRetriever.js
+            ├── searchbar.js
+            └── searchbar.scss
+
 ```
 
-## Dependencies
-  >npm i -D webpack webpack-dev-server webpack-cli html-webpack-plugin copy-webpack-plugin css-loader node-sass pug pug-loader sass-loader style-loader
+## Improvements
 
-```json
-"Dependencies": {
-    "copy-webpack-plugin": "^5.0.0",
-    "css-loader": "^2.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.11.0",
-    "pug": "^2.0.3",
-    "pug-loader": "^2.4.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.1"
-}
-```
+In order to write better code, I recomend the following improvements:
 
-## Data structure
-```json
-{
-   "logo": {
-      "img": "assets/logo.png",
-      "link": "#"
-    },
-   "links":[
-      {
-         "label":"Features",
-         "url":"#",
-         "items":[
+  * The search bar component has several improvements in the callback use.
 
-         ]
-      },
-      {
-         "label":"Plans",
-         "url":"#",
-         "items":[
-           
-         ]
-      },
-      {
-         "label":"Organizations",
-         "url":"#",
-         "items":[
-            
-         ]
-      },
-      {
-         "label":"Browse courses",
-         "url":"#/ideas",
-         "items":[
-           
-         ]
-      },
-      {
-         "label":"Support",
-         "url":"#/news",
-         "items":[
+  * The filter component needs to separate its logic in a more complex file structure to improve the decoupling.
 
-         ]
-      }         
-   ],
-   "login":[
-    {
-       "label":"Sing In",
-       "url":"#"
-    },
-    {
-       "label":"7 day trial",
-       "url":"#"
-    }
-  ]
-}
-```
+  * The HTML file should be separated in dynamic compontents.
 
-
+  * Consider use unit testing or TDD aproach.

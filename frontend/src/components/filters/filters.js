@@ -2,6 +2,10 @@ import Helpers from '../helpers';
 
 
 export default class Filters {
+  /**
+   * Build the cards
+   * @param {Function} retrieveData
+   */
   constructor (retrieveData) {
     this.retrieveData = retrieveData;
     ({ allCourses: this.allCourses,
@@ -57,21 +61,23 @@ export default class Filters {
     }).join('');
 
     const parser = new DOMParser();
-    const parsedDOM = parser.parseFromString(dropDownTemplate, "text/html")
-          .body;
+    const parsedDOM = parser.parseFromString(dropDownTemplate, "text/html").body;
     const mypage = document.createElement('DIV')
     mypage.innerHTML = parsedDOM.innerHTML;
     otherCourses.appendChild(mypage);
 
   }
 
+  /**
+   * Get more data while scroll down
+   * the pages function plus 1 to the URL
+   */
   bindEvents () {
     window.addEventListener('scroll', (event) => {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       let offsetHeight = document.body.offsetHeight;
       let clientHeight = document.documentElement.clientHeight;
       if (offsetHeight <= scrollTop + clientHeight) {
-
         this.allCourses = this.pages();
         this.retrieveData(this.allCourses, this.mountAllCards);
       }

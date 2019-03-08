@@ -3,10 +3,9 @@ web_example
 
   Useful Backend and Frontend examples.
 
-  # Backend 
+  ## Backend 
   See documentation [here](backend/README.md)
 
-  # Frontend
-    ... under construction.
-
+  ## Frontend
+   See documentation [here](frontend/README.md)
 
