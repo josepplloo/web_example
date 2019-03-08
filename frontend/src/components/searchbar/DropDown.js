@@ -12,7 +12,7 @@ export default class DropDown {
     this.dropDownTemplate = textToDisplay.map((item)=>{
       return (`
         <li class="username">
-          <button class="btn" type="button">${item.name}</button>
+          <button class="Search__results-button" type="button">${item.name}</button>
         </li>
       `)
     }).join('');

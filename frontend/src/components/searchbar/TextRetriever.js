@@ -1,4 +1,4 @@
-import Helpers from './helpers.js'
+import Helpers from '../helpers.js'
 
 export default class TextRetriever {
   constructor(node, retrieveData, printData){
