@@ -24,7 +24,17 @@ export default class Filters {
     dropDownTemplate = textToDisplay.map((course)=>{
       return (`
         <li class="Filters__main-curse">
-          <button class="Search__results-button" type="button">${course.name}</button>
+          <article class="Filters__article">
+            <div>
+              <img alt="Featured course banner" class="Filters__image-course"
+              src="https://storage.cebroker.com/CEBroker/${course.featuredBanner}"
+              >
+            </div>
+            <div>
+              <h1>${course.name}</h1>
+              <h2></h2>
+            </div>
+          </article>
         </li>
       `)
     }).join('');
@@ -39,9 +49,14 @@ export default class Filters {
 
     dropDownTemplate = textToDisplay.map((item)=>{
       return (`
-        <li class="Filters__main-curse">
-          <button class="Search__results-button" type="button">${item.name}</button>
-        </li>
+      <li class="Filters__main-curse">
+      <article class="Filters__article">
+        <div>
+          <h1>${course.name}</h1>
+          <h2>${course.provider.name}</h2>
+        </div>
+      </article>
+    </li>
       `)
     }).join('');
 
